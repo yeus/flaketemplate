@@ -148,13 +148,14 @@
             export NODE_OPTIONS="--max-old-space-size=8192"
             echo "increasing node memory allocation to $NODE_OPTIONS"
 
-            echo "setting poetry env for $(which python3.10)"
-            poetry env use $(which python3.10)
-            ##poetry env use 3.11
-            ##bash -C poetry shell
-            #echo "Activating poetry environment"
-            #POETRY_ENV_PATH=$(poetry env list --full-path | grep Activated | cut -d' ' -f1)
-            #source "$POETRY_ENV_PATH/bin/activate"
+
+            # echo "setting poetry env for $(which python3.10)"
+            # poetry env use $(which python3.10)
+            # ##poetry env use 3.11
+            # ##bash -C poetry shell
+            # #echo "Activating poetry environment"
+            # #POETRY_ENV_PATH=$(poetry env list --full-path | grep Activated | cut -d' ' -f1)
+            # #source "$POETRY_ENV_PATH/bin/activate"
 
             #PYTHONPATH=$PWD/$venvDir/${python.sitePackages}:$PYTHONPATH
             #######  end pytho poetry
@@ -165,7 +166,8 @@
               set +a
             fi
 
-            export PATH="$(pwd)/frontend/node_modules/.bin:$(pwd)/supabase/node_modules/.bin:$PATH"
+            #export PATH="$(pwd)/frontend/node_modules/.bin:$(pwd)/supabase/node_modules/.bin:$PATH"
+            export PATH="$(pwd)/node_modules/.bin:$PATH"
 
             export LD_LIBRARY_PATH=${
               pkgs.lib.makeLibraryPath libraries
